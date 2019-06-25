@@ -18,10 +18,8 @@ class ListProducts extends Component {
       )
     });
 
-    // console.log(this.props.products);
     return (
       <div className={styles.mainWrapper}>
-        {/* <p>ListProducts</p> */}
         {arrayProducts}
       </div>
     );
@@ -29,9 +27,7 @@ class ListProducts extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    products: getProducts(state)
-  }
+  return { products: getProducts(state) }
 }
 
 export default connect(mapStateToProps)(ListProducts);

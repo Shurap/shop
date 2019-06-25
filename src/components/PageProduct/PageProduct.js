@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getProductById } from '../../selectors';
+import { fetchProductById } from '../../api';
+import { bindActionCreators } from 'redux';
+import { addOneProduct } from '../../actions';
 
 class PageProduct extends Component {
+
+  async componentDidMount() {
+    const data = await fetchProductById(this.props.match.params.id);
+    this.props.addOneProduct(data);
+  }
+
   render() {
 
-    // console.log(this.props.product.image1);
-    const {product} = this.props
+    const { product } = this.props
 
     return (
       <div>
         <h1>PageProduct</h1>
-        <img 
-          src={product && product.image1}
-          alt={product && product.name}
-        ></img>
+        <div>
+          <img
+            className='img-thumbnail'
+            src={`../${product.image1}`}
+            alt={product.name}
+          ></img>
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    const id = ownProps.match.params.id;
-    return {product: getProductById(state, id)}
+const mapDispatchToProps = (dispatch) => bindActionCreators({ addOneProduct }, dispatch);
+
+const mapStateToProps = (state) => {
+  return { product: state.oneProduct }
 }
 
-export default connect(mapStateToProps)(PageProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(PageProduct);

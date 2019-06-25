@@ -30,10 +30,10 @@ class Product extends Component {
   render() {
     return (
       <div className={styles.main}>
-        <Link 
+        {/* <Link 
           to={`/product/${this.props.product.id}`}
           // textDecoration="none"
-        >
+        > */}
           <div
             className={(this.state.onMouseOver) ? styles.mainWrapperBig : styles.mainWrapperSmall}
             onMouseOver={this.onMouseOverComponent}
@@ -49,7 +49,7 @@ class Product extends Component {
             <div className={styles.wrapperText}>
               <p>{this.props.product.company}</p>
               <p>{this.props.product.name}</p>
-              <h4 className='pull-right'>{`$${this.props.product.price}`}</h4>
+              <h4 className='pull-right'>${this.props.product.price}</h4>
               <p>{`${take(60, this.props.product.description)}...`}</p>
             </div>
             <div className={(this.state.onMouseOver) ? styles.wrapperImgVisible : styles.wrapperImgUnvisible}>
@@ -84,8 +84,9 @@ class Product extends Component {
                 onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
               />
             </div>
+            <Link to={`/product/${this.props.product.id}`}>Info</Link>
           </div>
-        </Link>
+        {/* </Link> */}
       </div>
     );
   }

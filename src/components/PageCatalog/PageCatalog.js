@@ -7,7 +7,7 @@ import ListProducts from './ListProducts';
 
 class PageCatalog extends Component {
 
-  async componentWillMount() {
+    async componentDidMount() {
     const data = await fetchProducts();
     this.props.addAllProducts(data);
   }
