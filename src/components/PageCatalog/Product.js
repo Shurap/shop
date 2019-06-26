@@ -30,10 +30,10 @@ class Product extends Component {
   render() {
     return (
       <div className={styles.main}>
-        {/* <Link 
+        <Link
           to={`/product/${this.props.product.id}`}
-          // textDecoration="none"
-        > */}
+          className="link-unstyled"
+        >
           <div
             className={(this.state.onMouseOver) ? styles.mainWrapperBig : styles.mainWrapperSmall}
             onMouseOver={this.onMouseOverComponent}
@@ -84,9 +84,9 @@ class Product extends Component {
                 onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
               />
             </div>
-            <Link to={`/product/${this.props.product.id}`}>Info</Link>
+            {/* <Link to={`/product/${this.props.product.id}`}>Info</Link> */}
           </div>
-        {/* </Link> */}
+        </Link>
       </div>
     );
   }

@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProductById } from '../../api';
 import { bindActionCreators } from 'redux';
-import { addOneProduct } from '../../actions';
+import { 
+  addOneProduct,
+  addProductToBasket
+ } from '../../actions';
 
 class PageProduct extends Component {
 
@@ -18,6 +21,12 @@ class PageProduct extends Component {
     return (
       <div>
         <h1>PageProduct</h1>
+        <button
+          className="btn btn-primary"
+          onClick = {() => this.props.addProductToBasket(product.id)}
+        >
+          Buy it
+        </button>
         <div>
           <img
             className='img-thumbnail'
@@ -30,7 +39,10 @@ class PageProduct extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ addOneProduct }, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ 
+  addOneProduct,
+  addProductToBasket 
+}, dispatch);
 
 const mapStateToProps = (state) => {
   return { product: state.oneProduct }

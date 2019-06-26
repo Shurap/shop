@@ -9,3 +9,6 @@ export const getProducts = (state) => {
   return products;
 }
 
+export const getCountProductsInBasket = (state) => {
+  return state.productsInBasket.length;
+}

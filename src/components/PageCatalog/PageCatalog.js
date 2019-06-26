@@ -4,6 +4,8 @@ import { addAllProducts } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ListProducts from './ListProducts';
+import SideMenu from './SideMenu';
+import styles from './PageCatalog.module.css';
 
 class PageCatalog extends Component {
 
@@ -14,8 +16,9 @@ class PageCatalog extends Component {
 
   render() {
     return (
-      <div>
-        <h1>PageCatalog</h1>
+      <div className={styles.mainWrapper}>
+          {/* <h1>PageCatalog</h1> */}
+        <SideMenu />  
         <ListProducts />
       </div>
     );
