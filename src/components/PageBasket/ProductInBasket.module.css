@@ -1,0 +1,11 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+.wrapperText {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid green;
+}

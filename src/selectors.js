@@ -1,4 +1,4 @@
-import { compose, prop, sum, pluck, map } from 'ramda';
+import { compose, prop, sum, pluck, map, uniq } from 'ramda';
 
 export const getProductById = (state, id) => prop(id, state.allProducts);
 
@@ -23,4 +23,22 @@ export const getTotalpriceInBasket = (state) => {
     map(id => getProductById(state, id))
   )(state.productsInBasket);
   return totalPrice;
+}
+
+export const getToBasketProductsWithCount = (state) => {
+  const uniqIds = uniq(state.productsInBasket);
+  
+  const productCount = (id) => {
+    return state.productsInBasket.filter(element => element == '1').length
+  }
+
+  const listProductsInBasket = uniqIds.map(element => {
+    return state.allProducts[element]
+  })
+
+  listProductsInBasket.map (element => {
+    element['count'] = productCount(element.id)
+  })
+
+  return listProductsInBasket;
 }

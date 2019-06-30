@@ -18,7 +18,7 @@ class PageProduct extends Component {
   render() {
 
     const { product } = this.props
-    console.log('product', product)
+    // console.log('product', product)
 
     return (
       <div className={styles.mainWrapper}>
