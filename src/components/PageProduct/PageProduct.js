@@ -6,6 +6,7 @@ import {
   addOneProduct,
   addProductToBasket
  } from '../../actions';
+ import styles from './PageProduct.module.css';
 
 class PageProduct extends Component {
 
@@ -17,9 +18,10 @@ class PageProduct extends Component {
   render() {
 
     const { product } = this.props
+    console.log('product', product)
 
     return (
-      <div>
+      <div className={styles.mainWrapper}>
         <h1>PageProduct</h1>
         <button
           className="btn btn-primary"
@@ -27,7 +29,7 @@ class PageProduct extends Component {
         >
           Buy it
         </button>
-        <div>
+        <div className={styles.productWrapper}>
           <img
             className='img-thumbnail'
             src={`../${product.image1}`}

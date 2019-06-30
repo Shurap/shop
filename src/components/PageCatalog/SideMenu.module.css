@@ -1,11 +1,12 @@
 .mainWrapper {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .visibleTrue {
-  display: block;
+  /* display: block; */
+  margin: 5px;
 }
 
 .visibleFalse {

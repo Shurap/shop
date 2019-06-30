@@ -11,6 +11,10 @@ class Product extends Component {
     mainImage: this.props.product.image1
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.product.image1 !== this.props.product.image1) this.setState({...this.state, mainImage: this.props.product.image1}) 
+  }
+
   onMouseOverComponent = () => {
     this.setState({ onMouseOver: true })
   }
@@ -28,7 +32,6 @@ class Product extends Component {
   }
 
   render() {
-    console.log('element',this.state.mainImage)
     return (
       <div className={styles.main}>
         <Link

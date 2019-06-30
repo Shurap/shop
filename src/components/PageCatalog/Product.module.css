@@ -1,5 +1,6 @@
 .main {
   width: 300px;
+  min-height: 500px;
   margin: 2px
   /* border: 1px solid blue; */
 }
@@ -31,4 +32,12 @@
 
 .wrapperText {
   margin: 4px;
+}
+
+a { 
+  color: inherit;
+} 
+
+a:hover {
+  color: inherit;
 }
