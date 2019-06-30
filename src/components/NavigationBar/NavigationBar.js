@@ -22,5 +22,3 @@ const NavigationBar = () => {
 }
 
 export default NavigationBar;
-
-// `row ${styles.myCustomClassName}`

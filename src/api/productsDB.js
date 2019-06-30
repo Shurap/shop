@@ -27,7 +27,7 @@ export default [
   },
   {
     id: "3",
-    company: 'dc',
+    company: 'dc shoes',
     name: "Crisis",
     collection: "",
     description: "",

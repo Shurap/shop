@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
-import styles from './SideMenu.module.css'
+import SearchPanel from '../SearchPanel';
+import styles from './SideMenu.module.css';
 
 class SideMenu extends Component {
+  state = {
+    visible: true
+  }
+
+  onToggleVisible = () => {
+    this.setState({...this.state, visible: !this.state.visible})
+  }
 
   render() {
 
     return (
       <div className={styles.mainWrapper}>
-        SideMenu
-      </div>
+        <div className={(this.state.visible) ? styles.visibleTrue : styles.visibleFalse}>
+          {/* SideMenu */}
+          <SearchPanel />
+        </div>
+        <div className={styles.buttonWrapper}>
+          <button onClick={this.onToggleVisible}> Hide</button>
+        </div>
+      </div >
     );
   }
 }

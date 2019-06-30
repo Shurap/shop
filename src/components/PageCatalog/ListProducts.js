@@ -9,6 +9,7 @@ class ListProducts extends Component {
   render() {
 
     const arrayProducts = this.props.products.map((element, index) => {
+      // console.log ('products', this.props.products)
       return (
         <div key={index}>
           <Product

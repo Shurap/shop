@@ -28,11 +28,12 @@ class Product extends Component {
   }
 
   render() {
+    console.log('element',this.state.mainImage)
     return (
       <div className={styles.main}>
         <Link
           to={`/product/${this.props.product.id}`}
-          className="link-unstyled"
+          // className="link-unstyled"
         >
           <div
             className={(this.state.onMouseOver) ? styles.mainWrapperBig : styles.mainWrapperSmall}

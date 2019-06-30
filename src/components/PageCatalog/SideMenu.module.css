@@ -1,3 +1,17 @@
 .mainWrapper {
+  display: flex;
+  flex-direction: row;
   border: 1px solid red;
+}
+
+.visibleTrue {
+  display: block;
+}
+
+.visibleFalse {
+  display: none;
+}
+
+.buttonWrapper {
+  background-color: #343a40;
 }
