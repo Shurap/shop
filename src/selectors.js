@@ -29,7 +29,7 @@ export const getToBasketProductsWithCount = (state) => {
   const uniqIds = uniq(state.productsInBasket);
   
   const productCount = (id) => {
-    return state.productsInBasket.filter(element => element == '1').length
+    return state.productsInBasket.filter(element => element === id).length
   }
 
   const listProductsInBasket = uniqIds.map(element => {
@@ -40,5 +40,6 @@ export const getToBasketProductsWithCount = (state) => {
     element['count'] = productCount(element.id)
   })
 
+  console.log(listProductsInBasket)
   return listProductsInBasket;
 }

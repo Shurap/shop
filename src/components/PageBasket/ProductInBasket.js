@@ -4,24 +4,29 @@ import styles from './ProductInBasket.module.css'
 class ProductInBasket extends Component {
 
   render() {
-
     return (
-      <div className={styles.mainWrapper}>
-        <div>
+      <tr>
+        <td className='first-column-checkout'>
           <img
             className='img-thumbnail'
             src={`../${this.props.product.image1}`}
             alt={this.props.product.name}
             width="100"
           ></img>
-        </div>
-        <div className={styles.wrapperText}>
+        </td>
+        <td>
           {this.props.product.name}
-          <br/>
+        </td>
+        <td>
           {this.props.product.company}
-        </div>
-        
-      </div>
+        </td>
+        <td>
+          {this.props.product.price}
+        </td>
+        <td>
+          {this.props.product.count}
+        </td>
+      </tr>
     );
   }
 }

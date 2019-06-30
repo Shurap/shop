@@ -9,7 +9,6 @@ class PageBasket extends Component {
 
     return (
       <div>
-        <h1>PageBasket</h1>
         <ListProductsInBasket/>
       </div>
     );

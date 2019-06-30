@@ -5,22 +5,22 @@ import { getTotalpriceInBasket, getToBasketProductsWithCount } from '../../selec
 
 class ListProductsInBasket extends Component {
 
-
   render() {
-
     const arrayProducts = this.props.products.map((element, index) => {
       return (
-        <div key={index}>
+        <tbody key={index}>
           <ProductInBasket
             product={element}
           />
-        </div>
+        </tbody>
       )
     });
 
     return (
-      <div>
-        {arrayProducts}
+      <div className='table-responsive'>
+        <table className='table-bordered table-striped table-condensed cf'>
+          {arrayProducts}
+        </table>
       </div>
     );
   }
