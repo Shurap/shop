@@ -6,8 +6,12 @@ import { addBrandLabel } from '../../actions';
 
 class BrandList extends Component {
 
-  handleClick = (e) => {
+  addBrand = (e) => {
     this.props.addBrandLabel(e.target.innerHTML);
+  }
+
+  clearBrand = () => {
+    this.props.addBrandLabel('');
   }
 
   render() {
@@ -16,7 +20,7 @@ class BrandList extends Component {
       return (
         <div
           key={index}
-          onClick={this.handleClick}
+          onClick={this.addBrand}
         >
           {element}
         </div>
@@ -26,6 +30,7 @@ class BrandList extends Component {
     return (
       <div>
         <h4>Brands</h4>
+        <p onClick={this.clearBrand}>all</p>
         {arrayBrands}
       </div>
     )

@@ -6,9 +6,15 @@ export const getProducts = (state) => {
   const enterProducts = state.showProducts.ids.map((element) => {
     return getProductById(state, element);
   });
-  const exitProducts = enterProducts.filter((element) => {
+  // include Search
+  const exitProductsAfterSearch = enterProducts.filter((element) => {
     return element.name.toLowerCase().indexOf(state.search.searchLabel.toLowerCase()) > -1;
   })
+  //include Brands
+  const exitProducts = (state.brand.brandLabel) ?
+    exitProductsAfterSearch.filter((element) => {
+      return element.company === state.brand.brandLabel;
+    }) : exitProductsAfterSearch;
   return exitProducts;
 }
 
@@ -33,7 +39,7 @@ export const getToBasketProductsWithCount = (state) => {
   const listProductsInBasket = uniqIds.map(element => {
     return state.allProducts[element]
   })
-  listProductsInBasket.map (element => {
+  listProductsInBasket.map(element => {
     element['count'] = productCount(element.id)
   })
   return listProductsInBasket;
