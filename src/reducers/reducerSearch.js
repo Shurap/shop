@@ -1,5 +1,4 @@
 import { ADD_SEARCH_LABEL } from '../constants';
-import { merge } from 'ramda';
 
 const defaultState = {searchLabel: ''};
 

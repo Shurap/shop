@@ -27,19 +27,18 @@ export const getTotalpriceInBasket = (state) => {
 
 export const getToBasketProductsWithCount = (state) => {
   const uniqIds = uniq(state.productsInBasket);
-  
   const productCount = (id) => {
     return state.productsInBasket.filter(element => element === id).length
   }
-
   const listProductsInBasket = uniqIds.map(element => {
     return state.allProducts[element]
   })
-
   listProductsInBasket.map (element => {
     element['count'] = productCount(element.id)
   })
-
-  console.log(listProductsInBasket)
   return listProductsInBasket;
+}
+
+export const getAllBrands = (state) => {
+  return uniq(Object.keys(state.allProducts).map(element => state.allProducts[element]['company']));
 }
