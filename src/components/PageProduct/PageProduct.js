@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProductById } from '../../api';
 import { bindActionCreators } from 'redux';
-import { 
+import {
   addOneProduct,
   addProductToBasket
- } from '../../actions';
- import styles from './PageProduct.module.css';
+} from '../../actions';
+import styles from './PageProduct.module.css';
 
 class PageProduct extends Component {
 
@@ -22,28 +22,40 @@ class PageProduct extends Component {
 
     return (
       <div className={styles.mainWrapper}>
-        <h1>PageProduct</h1>
-        <button
-          className="btn btn-primary"
-          onClick = {() => this.props.addProductToBasket(product.id)}
-        >
-          Buy it
-        </button>
-        <div className={styles.productWrapper}>
+        <div className={styles.imageWrapper}>
           <img
-            className='img-thumbnail'
+            // className='img-thumbnail'
+            className={styles.bigImage}
             src={`../${product.image1}`}
             alt={product.name}
           ></img>
         </div>
-      </div>
+        <div className={styles.infoWrapper}>
+          <button
+            className="btn btn-primary"
+            onClick={() => this.props.addProductToBasket(product.id)}
+          >
+            Buy it
+        </button>
+          <h4>Company:</h4>
+          {product.company}
+          <h4>Name:</h4>
+          {product.name}
+          <h4>Collection:</h4>
+          {product.collection}
+          <h4>Description:</h4>
+          {product.description}
+          <h4>Price:</h4>
+          {product.price}
+        </div>
+      </div >
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ 
+const mapDispatchToProps = (dispatch) => bindActionCreators({
   addOneProduct,
-  addProductToBasket 
+  addProductToBasket
 }, dispatch);
 
 const mapStateToProps = (state) => {

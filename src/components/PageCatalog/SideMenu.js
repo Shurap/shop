@@ -21,7 +21,7 @@ class SideMenu extends Component {
           <BrandList />
         </div>
         <div className={styles.buttonWrapper}>
-          <button onClick={this.onToggleVisible}> Hide</button>
+          <button onClick={this.onToggleVisible}>Hide</button>
         </div>
       </div >
     );

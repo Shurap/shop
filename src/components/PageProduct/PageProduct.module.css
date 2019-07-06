@@ -1,7 +1,29 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor, _darkcolor, _whitecolor from colors;
+
 .mainWrapper {
-  border: 1px solid red;
+  display: flex;
+  /* border: 1px solid red; */
+  /* height: 80%; */
 }
 
-.productWrapper {
-  border: 1px solid green;
+.imageWrapper {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* border: 1px solid green; */
+  background-color: _whitecolor;
+  width: 70%;
+}
+
+.infoWrapper {
+  width: 30%;
+  padding: 10px;
+}
+
+
+.bigImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
 }

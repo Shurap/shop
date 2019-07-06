@@ -1,11 +1,12 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor, _darkcolor from colors;
+
 .mainWrapper {
   display: flex;
   flex-direction: row;
-  /* border: 1px solid red; */
 }
 
 .visibleTrue {
-  /* display: block; */
   margin: 5px;
 }
 
@@ -14,5 +15,5 @@
 }
 
 .buttonWrapper {
-  background-color: #343a40;
+  margin: 5px;
 }

@@ -10,7 +10,7 @@ export const getProducts = (state) => {
   const exitProductsAfterSearch = enterProducts.filter((element) => {
     return element.name.toLowerCase().indexOf(state.search.searchLabel.toLowerCase()) > -1;
   })
-  //include Brands
+  // include Brands
   const exitProducts = (state.brand.brandLabel) ?
     exitProductsAfterSearch.filter((element) => {
       return element.company === state.brand.brandLabel;

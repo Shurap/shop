@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addSearchLabel } from '../../actions';
+import styles from './SearchPanel.module.css';
 
 class SearchPanel extends Component {
 
@@ -11,13 +12,15 @@ class SearchPanel extends Component {
 
   render() {
     return (
-      <div className='well blosd'>
-        <h3 className='lead'>Search</h3>
+      <div className={styles.mainWrapper}>
+        <h4>Search</h4>
         <input
           className='form-control'
           type='text'
           onChange={this.onChange}
           value={this.props.searchLabel}
+          placeholder="Product name"
+          autoComplete="off"
         />
       </div>
     )

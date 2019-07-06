@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAllBrands } from '../../selectors';
 import { bindActionCreators } from 'redux';
 import { addBrandLabel } from '../../actions';
+import styles from './BrandList.module.css';
 
 class BrandList extends Component {
 
@@ -19,6 +20,7 @@ class BrandList extends Component {
     const arrayBrands = this.props.brands.map((element, index) => {
       return (
         <div
+          className={(this.props.brandLabel === element) ? styles.textWrapperBorderOn : styles.textWrapperBorderOff}
           key={index}
           onClick={this.addBrand}
         >
@@ -28,9 +30,14 @@ class BrandList extends Component {
     });
 
     return (
-      <div>
+      <div className={styles.mainWrapper}>
         <h4>Brands</h4>
-        <p onClick={this.clearBrand}>all</p>
+        <div
+          className={(this.props.brandLabel === '') ? styles.textWrapperBorderOn : styles.textWrapperBorderOff}
+          onClick={this.clearBrand}
+        >
+          all
+        </div>
         {arrayBrands}
       </div>
     )
@@ -39,7 +46,8 @@ class BrandList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    brands: getAllBrands(state)
+    brands: getAllBrands(state),
+    brandLabel: state.brand.brandLabel
   }
 }
 
