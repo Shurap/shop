@@ -17,7 +17,6 @@ class PageCatalog extends Component {
   render() {
     return (
       <div className={styles.mainWrapper}>
-          {/* <h1>PageCatalog</h1> */}
         <SideMenu />  
         <ListProducts />
       </div>

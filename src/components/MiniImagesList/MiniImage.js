@@ -6,12 +6,13 @@ class MiniImage extends Component {
   render() {
     return (
       <img
-      className={styles.miniImage}
+        className={styles.miniImage}
         src={this.props.image}
         width="58"
         alt={this.props.name}
-        onMouseOver={() => this.props.onMouseOverMiniImage(this.props.image)}
-        onMouseLeave={this.props.onMouseLeaveMiniImage}
+        onMouseOver={() => this.props.onMouseOverMiniImage(this.props.image) || null}
+        onMouseLeave={this.props.onMouseLeaveMiniImage || null}
+        onClick={() => this.props.onClickMiniImage(this.props.image) || null}
       >
       </img>
     )

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Product.module.css';
-import MiniImage from './MiniImage';
 import { take } from 'ramda';
 import { Link } from 'react-router-dom';
+import MiniImagesList from '../MiniImagesList';
 
 class Product extends Component {
 
@@ -12,7 +12,7 @@ class Product extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.product.image1 !== this.props.product.image1) this.setState({...this.state, mainImage: this.props.product.image1}) 
+    if (prevProps.product.image1 !== this.props.product.image1) this.setState({ ...this.state, mainImage: this.props.product.image1 })
   }
 
   onMouseOverComponent = () => {
@@ -31,12 +31,13 @@ class Product extends Component {
     this.setState({ mainImage: this.props.product.image1 })
   }
 
+  onClickMiniImage = (newImage) => {}
+
   render() {
     return (
       <div className={styles.main}>
         <Link
           to={`/product/${this.props.product.id}`}
-          // className="link-unstyled"
         >
           <div
             className={(this.state.onMouseOver) ? styles.mainWrapperBig : styles.mainWrapperSmall}
@@ -57,38 +58,13 @@ class Product extends Component {
               <p>{`${take(60, this.props.product.description)}...`}</p>
             </div>
             <div className={(this.state.onMouseOver) ? styles.wrapperImgVisible : styles.wrapperImgUnvisible}>
-              <MiniImage
-                image={this.props.product.image1}
-                name={this.props.product.name}
-                onMouseOverMiniImage={this.onMouseOverMiniImage}
-                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
-              />
-              <MiniImage
-                image={this.props.product.image2}
-                name={this.props.product.name}
-                onMouseOverMiniImage={this.onMouseOverMiniImage}
-                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
-              />
-              <MiniImage
-                image={this.props.product.image3}
-                name={this.props.product.name}
-                onMouseOverMiniImage={this.onMouseOverMiniImage}
-                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
-              />
-              <MiniImage
-                image={this.props.product.image4}
-                name={this.props.product.name}
-                onMouseOverMiniImage={this.onMouseOverMiniImage}
-                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
-              />
-              <MiniImage
-                image={this.props.product.image5}
-                name={this.props.product.name}
-                onMouseOverMiniImage={this.onMouseOverMiniImage}
-                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage}
+              <MiniImagesList
+                product={this.props.product}
+                onMouseOverMiniImage={this.onMouseOverMiniImage || null}
+                onMouseLeaveMiniImage={this.onMouseLeaveMiniImage || null}
+                onClickMiniImage={this.onClickMiniImage || null}
               />
             </div>
-            {/* <Link to={`/product/${this.props.product.id}`}>Info</Link> */}
           </div>
         </Link>
       </div>

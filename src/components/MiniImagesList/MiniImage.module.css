@@ -1,0 +1,7 @@
+@value colors: "../../globalCSS/colors.css";
+@value _darkcolor from colors;
+
+.miniImage {
+  border: 1px solid _darkcolor;
+  margin: 1px;
+}

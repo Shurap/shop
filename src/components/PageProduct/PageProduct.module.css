@@ -3,14 +3,10 @@
 
 .mainWrapper {
   display: flex;
-  /* border: 1px solid red; */
-  /* height: 80%; */
 }
 
 .imageWrapper {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* border: 1px solid green; */
+  position: relative;
   background-color: _whitecolor;
   width: 70%;
 }
@@ -20,10 +16,34 @@
   padding: 10px;
 }
 
-
 .bigImage {
   display: block;
   max-width: 100%;
   height: auto;
   margin: auto;
+}
+
+.miniImagesList{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin-left: -150px;
+}
+
+.lines {
+  height: 1px;
+  margin: 10px 0 10px 0;
+  background-color: _darkcolor;
+}
+
+.buttons {
+  padding: 10px;
+  /* border: 0px; */
+  border: 2px solid _darkcolor;
+  margin: 5px;
+  /* width: 25px; */
+  /* height: 25px; */
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: _backgroundcolor;
 }

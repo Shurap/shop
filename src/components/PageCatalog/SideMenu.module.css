@@ -17,3 +17,25 @@
 .buttonWrapper {
   margin: 5px;
 }
+
+.buttonVisibleTrue {
+  background: url('../../images/baseline-skip_previous-24px.svg');
+  padding: 0px;
+  border: 0px;
+  margin: 2px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.buttonVisibleFalse {
+  background: url('../../images/baseline-skip_next-24px.svg');
+  padding: 0px;
+  border: 0px;
+  margin: 2px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 2px;
+}
