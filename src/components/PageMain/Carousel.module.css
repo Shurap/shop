@@ -1,0 +1,18 @@
+.imageSlide {
+  margin: 10px;
+	height: 500px;
+	width: 100%;
+	/* transition: background-image .8s ease-in-out; */
+}
+
+.left {
+  position: absolute;
+  top: 47%;
+  left: 3%;
+}
+
+.right {
+  position: absolute;
+  top: 47%;
+  right: 3%;
+}
