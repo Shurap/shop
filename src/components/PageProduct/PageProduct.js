@@ -70,14 +70,12 @@ class PageProduct extends Component {
           <h4 className='pull-right'>${product.price}</h4>
           <div className={styles.lines}></div>
           <button
-            // className="btn btn-primary"
             className={styles.buttons}
             onClick={() => this.props.addProductToBasket(product.id)}
           >
             Buy it
           </button>
           <button 
-            // className="btn btn-primary"
             className={styles.buttons}
             onClick={() => this.props.history.push('/catalog')}
           >

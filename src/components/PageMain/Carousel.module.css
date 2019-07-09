@@ -1,18 +1,18 @@
 .imageSlide {
   margin: 10px;
 	height: 500px;
-	width: 100%;
-	/* transition: background-image .8s ease-in-out; */
 }
 
 .left {
   position: absolute;
-  top: 47%;
+  top: 35%;
   left: 3%;
+  cursor: pointer;
 }
 
 .right {
   position: absolute;
-  top: 47%;
+  top: 35%;
   right: 3%;
+  cursor: pointer;
 }

@@ -1,0 +1,10 @@
+@value colors: "../../globalCSS/colors.css";
+@value _darkcolor from colors;
+
+.text {
+  margin: 10px;
+  text-align:justify;
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 1px solid _darkcolor;
+}

@@ -1,0 +1,21 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor, _darkcolor from colors;
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  align-self: center;
+}
+
+.button {
+  align-self: center;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid _darkcolor;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: _backgroundcolor;
+}
