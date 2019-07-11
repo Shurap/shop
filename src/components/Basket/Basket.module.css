@@ -1,0 +1,6 @@
+@value colors: "../../globalCSS/colors.css";
+@value _whitecolor from colors;
+
+.text {
+  color: _whitecolor;
+}

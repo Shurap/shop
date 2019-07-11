@@ -5,19 +5,22 @@ import Basket from '../Basket';
 
 const NavigationBar = () => {
   return (
-    <nav
-      className={`navbar navbar-expand-sm bg-dark navbar-dark ${styles.mainWrapper}`}
-
-    >
-      <Link className="navbar-brand" to='/'>LOGO</Link>
-      {/* <h1>NavigationBar</h1> */}
-      <Link className="nav-link" to='/catalog'>Catalog</Link>
-      <Link className="nav-link" to='/login'>LogIn</Link>
-      <Link className="nav-link" to='/signup'>SignUp</Link>
-      <Link className="nav-link" to='/basket'>
-        <Basket />
+    <nav className={styles.mainWrapper}>
+      <div className={styles.logoWrapper}>
+        <Link className={styles.links} to='/'>
+          <img className={styles.logo} src="upload/logo/sneaker.png"></img>
+        </Link>
+      </div>
+      <div className={styles.linksWrapper}>
+        <Link className={styles.links} to='/'>Home</Link>
+        <Link className={styles.links} to='/catalog'>Catalog</Link>
+      </div>
+      <Link className={styles.links} to='/basket'>
+        <div className={styles.basketWrapper}>
+          <Basket />
+        </div>
       </Link>
-    </nav>
+    </nav >
   )
 }
 

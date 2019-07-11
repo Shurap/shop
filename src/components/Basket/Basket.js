@@ -4,12 +4,14 @@ import {
   getCountProductsInBasket,
   getTotalpriceInBasket
 } from '../../selectors';
+import styles from './Basket.module.css'
 
 class Basket extends Component {
   render() {
     return (
       <div>
-        <h4>Basket {this.props.countProductsInBasket} {this.props.totalPriceInBasket}</h4>
+        {/* <h4>Basket {this.props.countProductsInBasket} {this.props.totalPriceInBasket}</h4> */}
+        <p className={styles.text}>{this.props.countProductsInBasket}</p>
       </div>
     );
   }

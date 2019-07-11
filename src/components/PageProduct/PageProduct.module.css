@@ -38,11 +38,8 @@
 
 .buttons {
   padding: 10px;
-  /* border: 0px; */
   border: 2px solid _darkcolor;
   margin: 5px;
-  /* width: 25px; */
-  /* height: 25px; */
   cursor: pointer;
   border-radius: 2px;
   background-color: _backgroundcolor;
