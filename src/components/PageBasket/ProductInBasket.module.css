@@ -1,11 +1,51 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor from colors;
+
 .mainWrapper {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+.image {
+  border: 1px solid _backgroundcolor;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
 .wrapperText {
+  border: 1px solid blue;
+  padding: 5px;
+  width: 300px;
+}
+
+.wrapperPrice {
   display: flex;
-  flex-direction: row;
-  border: 1px solid green;
+  justify-content: space-between;
+  border: 1px solid blue;
+  padding: 5px;
+  width: 100px;
+}
+
+.wrapperSelect {
+  border: 1px solid blue;
+  padding: 5px;
+  width: 100px;
+}
+
+.select {
+  border: 1px solid _backgroundcolor;
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  background: #f8f8f8;
+}
+
+.wrapperSumm {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid blue;
+  padding: 5px;
+  width: 100px;
 }

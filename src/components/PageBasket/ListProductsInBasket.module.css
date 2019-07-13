@@ -1,0 +1,8 @@
+@value colors: "../../globalCSS/colors.css";
+@value _darkcolor from colors;
+
+.lines {
+  height: 1px;
+  margin: 10px 0 10px 0;
+  background-color: _darkcolor;
+}
