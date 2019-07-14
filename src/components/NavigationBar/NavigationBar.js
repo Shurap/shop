@@ -14,6 +14,7 @@ const NavigationBar = () => {
       <div className={styles.linksWrapper}>
         <Link className={styles.links} to='/'>Home</Link>
         <Link className={styles.links} to='/catalog'>Catalog</Link>
+        <Link className={styles.links} to='/login'>Login</Link>
       </div>
       <Link className={styles.links} to='/basket'>
         <div className={styles.basketWrapper}>
