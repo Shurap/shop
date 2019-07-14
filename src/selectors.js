@@ -20,15 +20,18 @@ export const getProducts = (state) => {
 }
 
 export const getCountProductsInBasket = (state) => {
-  return state.productsInBasket.length;
+  if (state.productsInBasket.length === 0) return 0;
+  const countProducts = state.productsInBasket.reduce((sum, element) =>{
+    return sum + +element.count
+  }, 0);
+  return countProducts;
 }
 
 export const getTotalpriceInBasket = (state) => {
-  const totalPrice = compose(
-    sum,
-    pluck('price'),
-    map(id => getProductById(state, id))
-  )(state.productsInBasket);
+  if (state.productsInBasket.length === 0) return 0;
+  const totalPrice = state.productsInBasket.reduce((sum, element) =>{
+    return sum + element.price * element.count;
+  }, 0);
   return totalPrice;
 }
 
@@ -46,23 +49,23 @@ export const getTotalpriceInBasket = (state) => {
 //   return listProductsInBasket;
 // }
 
-export const getToBasketProductsWithCount = createSelector(
-  state => state.productsInBasket,
-  state => state.allProducts,
-  (productsInBasket, allProducts) => {
-    const uniqIds = uniq(productsInBasket);
-    const productCount = (id) => {
-      return productsInBasket.filter(element => element === id).length
-    }
-    const listProductsInBasket = uniqIds.map(element => {
-      return allProducts[element]
-    })
-    listProductsInBasket.map(element => {
-      element['count'] = productCount(element.id)
-    })
-    return listProductsInBasket;
-  }
-)
+// export const getToBasketProductsWithCount = createSelector(
+//   state => state.productsInBasket,
+//   state => state.allProducts,
+//   (productsInBasket, allProducts) => {
+//     const uniqIds = uniq(productsInBasket);
+//     const productCount = (id) => {
+//       return productsInBasket.filter(element => element === id).length
+//     }
+//     const listProductsInBasket = uniqIds.map(element => {
+//       return allProducts[element]
+//     })
+//     listProductsInBasket.map(element => {
+//       element['count'] = productCount(element.id)
+//     })
+//     return listProductsInBasket;
+//   }
+// )
 
 // const getToBasketProductsWithCountById = (id) => createSelector(
 //   getToBasketProductsWithCount,

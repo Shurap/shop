@@ -3,7 +3,9 @@ import {
   ADD_ONE_PRODUCT,
   ADD_PRODUCT_TO_BASKET,
   ADD_SEARCH_LABEL,
-  ADD_BRAND_LABEL
+  ADD_BRAND_LABEL,
+  CHANGE_PRODUCT_COUNT_IN_BASKET,
+  DELETE_PRODUCT_FROM_BASKET
 } from '../constants';
 
 export function addAllProducts (data) {
@@ -37,6 +39,21 @@ export function addSearchLabel (data) {
 export function addBrandLabel (data) {
   return {
     type: ADD_BRAND_LABEL,
+    data
+  }
+}
+
+export function changeProductCountInBasket (count, id) {
+  return {
+    type: CHANGE_PRODUCT_COUNT_IN_BASKET,
+    count,
+    id
+  }
+}
+
+export function deleteProductFromBasket (data) {
+  return {
+    type: DELETE_PRODUCT_FROM_BASKET,
     data
   }
 }

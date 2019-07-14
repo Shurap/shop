@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ProductInBasket from './ProductInBasket';
 import { connect } from 'react-redux';
-import { getTotalpriceInBasket, getToBasketProductsWithCount } from '../../selectors';
 import styles from './ListProductsInBasket.module.css';
 
 class ListProductsInBasket extends Component {
@@ -28,8 +27,7 @@ class ListProductsInBasket extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    totalPrice: getTotalpriceInBasket(state),
-    products: getToBasketProductsWithCount(state)
+    products: state.productsInBasket
   }
 }
 

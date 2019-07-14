@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchProductById } from '../../api';
+// import { fetchProductById } from '../../api';
 import { bindActionCreators } from 'redux';
 import MiniImagesList from '../MiniImagesList';
 import {
-  addOneProduct,
+  // addOneProduct,
   addProductToBasket
 } from '../../actions';
 import styles from './PageProduct.module.css';
@@ -19,10 +19,10 @@ class PageProduct extends Component {
     if (prevProps.product.image1 !== this.props.product.image1) this.setState({...this.state, mainImage: this.props.product.image1}) 
   }
   
-  async componentDidMount() {
-    const data = await fetchProductById(this.props.match.params.id);
-    this.props.addOneProduct(data);
-  }
+  // async componentDidMount() {
+  //   // const data = await fetchProductById(this.props.match.params.id);
+  //   // this.props.addOneProduct(data);
+  // }
 
   onMouseOverMiniImage = (newImage) => {}
 
@@ -30,6 +30,10 @@ class PageProduct extends Component {
 
   onClickMiniImage = (newImage) => {
     this.setState({ mainImage: newImage })
+  }
+
+  onClickButtonBuy = (product) => {
+    this.props.addProductToBasket(product);
   }
 
   render() {
@@ -71,7 +75,8 @@ class PageProduct extends Component {
           <div className={styles.lines}></div>
           <button
             className={styles.buttons}
-            onClick={() => this.props.addProductToBasket(product.id)}
+            // onClick={() => this.props.addProductToBasket(product.id)}
+            onClick = {() => this.onClickButtonBuy(product)}
           >
             Buy it
           </button>
@@ -88,7 +93,7 @@ class PageProduct extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  addOneProduct,
+  // addOneProduct,
   addProductToBasket
 }, dispatch);
 

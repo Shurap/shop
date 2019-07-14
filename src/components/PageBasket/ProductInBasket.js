@@ -2,23 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  addProductToBasket
+  changeProductCountInBasket,
+  deleteProductFromBasket
 } from '../../actions';
 import styles from './ProductInBasket.module.css'
 
 class ProductInBasket extends Component {
 
   onChange = (e) => {
-    console.log ('value', e.target.value);
-    console.log('count', this.props.product.count);
-    console.log('id', this.props.product.id);
-
-    this.props.product.count = e.target.value;
-
-
+    this.props.changeProductCountInBasket(e.target.value, this.props.product.id);
   }
 
-  render() {    
+  onClickButtonDelete = (id) => {
+    this.props.deleteProductFromBasket(id);
+  }
+
+  render() {
     return (
       <div className={styles.mainWrapper}>
         <div>
@@ -38,8 +37,8 @@ class ProductInBasket extends Component {
           <p>x</p>
         </div>
         <div className={styles.wrapperSelect}>
-          <select 
-            className={styles.select} 
+          <select
+            className={styles.select}
             onChange={this.onChange}
             defaultValue={this.props.product.count}
           >
@@ -57,19 +56,22 @@ class ProductInBasket extends Component {
         <div className={styles.wrapperSumm}>
           <h4>${this.props.product.count * this.props.product.price}</h4>
         </div>
+        <div className={styles.wrapperButton}>
+          <button 
+            className={styles.buttonDelete}
+            onClick={() => this.onClickButtonDelete(this.props.product.id)}
+          >
+            delete
+          </button>
+        </div>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  addProductToBasket
+  changeProductCountInBasket,
+  deleteProductFromBasket
 }, dispatch);
 
-const mapStateToProps = (state) => {
-  return { productsInBasket: state.productsInBasket }
-}
-
-// export default ProductInBasket;
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductInBasket);
+export default connect(null, mapDispatchToProps)(ProductInBasket);

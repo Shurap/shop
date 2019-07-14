@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { 
-  getTotalpriceInBasket, 
-  getToBasketProductsWithCount,
+import {
+  getTotalpriceInBasket,
   getCountProductsInBasket,
 } from '../../selectors';
 import ListProductsInBasket from './ListProductsInBasket';
@@ -13,10 +12,16 @@ class PageBasket extends Component {
   render() {
     return (
       <div className={styles.mainWrapper}>
-        <h2>Your basket</h2>
-        <p>({this.props.countProducts} items)</p>
-
-        <ListProductsInBasket/>
+        <div className={styles.headWrapper}>
+          <div className={styles.countWrapper}>
+            <h2>Your basket</h2>
+            <p>({this.props.countProducts} items)</p>
+          </div>
+          <div className={styles.priceWrapper}>
+            Total price: ${this.props.totalPrice}
+          </div>
+        </div>
+        <ListProductsInBasket />
       </div>
     );
   }
@@ -25,7 +30,6 @@ class PageBasket extends Component {
 const mapStateToProps = (state) => {
   return {
     totalPrice: getTotalpriceInBasket(state),
-    products: getToBasketProductsWithCount(state),
     countProducts: getCountProductsInBasket(state)
   }
 }
