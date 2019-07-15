@@ -5,7 +5,8 @@ import {
   ADD_SEARCH_LABEL,
   ADD_BRAND_LABEL,
   CHANGE_PRODUCT_COUNT_IN_BASKET,
-  DELETE_PRODUCT_FROM_BASKET
+  DELETE_PRODUCT_FROM_BASKET,
+  ADD_DATA_FROM_ADMIN
 } from '../constants';
 
 export function addAllProducts (data) {
@@ -54,6 +55,13 @@ export function changeProductCountInBasket (count, id) {
 export function deleteProductFromBasket (data) {
   return {
     type: DELETE_PRODUCT_FROM_BASKET,
+    data
+  }
+}
+
+export function addDataFromAdmin (data) {
+  return {
+    type: ADD_DATA_FROM_ADMIN,
     data
   }
 }

@@ -7,6 +7,7 @@ export const getProducts = (state) => {
   const enterProducts = state.showProducts.ids.map((element) => {
     return getProductById(state, element);
   });
+
   // include Search
   const exitProductsAfterSearch = enterProducts.filter((element) => {
     return element.name.toLowerCase().indexOf(state.search.searchLabel.toLowerCase()) > -1;
