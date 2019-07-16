@@ -1,12 +1,9 @@
-import { compose, prop, sum, pluck, map, uniq } from 'ramda';
+import { uniq } from 'ramda';
 import { createSelector } from 'reselect';
 
-export const getProductById = (state, id) => prop(id, state.allProducts);
-
 export const getProducts = (state) => {
-  const enterProducts = state.showProducts.ids.map((element) => {
-    return getProductById(state, element);
-  });
+
+  const enterProducts = Object.values(state.allProducts)
 
   // include Search
   const exitProductsAfterSearch = enterProducts.filter((element) => {
@@ -34,6 +31,10 @@ export const getTotalpriceInBasket = (state) => {
     return sum + element.price * element.count;
   }, 0);
   return totalPrice;
+}
+
+export const getNewId = (state) => {
+  return String(Object.values(state.allProducts).length + 1);
 }
 
 // export const getToBasketProductsWithCount = (state) => {

@@ -7,7 +7,6 @@ import styles from './ListProducts.module.css'
 class ListProducts extends Component {
 
   render() {
-
     const arrayProducts = this.props.products.map((element, index) => {
       return (
         <div key={index}>

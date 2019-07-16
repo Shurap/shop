@@ -9,8 +9,7 @@ const defaultState = {};
 function allProducts(state = defaultState, action) {
   switch (action.type) {
     case ADD_ALL_PRODUCTS:
-      const newData = indexBy(prop('id'), action.data);
-      return merge(state, newData);
+      return merge(state, action.data);
 
     case ADD_DATA_FROM_ADMIN:
       const adminData = {[action.data.id]: action.data}
