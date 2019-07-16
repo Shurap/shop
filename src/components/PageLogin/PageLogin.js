@@ -53,7 +53,7 @@ class PageLogin extends Component {
             />
             <span className={styles.underEdit}></span>
             <div className={styles.textWrapper}>
-              Enter any login and any password, until back isn't...
+              Enter any login and any password, because there is no server...
             </div>
             <button
               className={styles.button}

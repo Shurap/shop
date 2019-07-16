@@ -1,11 +1,9 @@
 .mainWrapper {
-  /* border: 1px solid green; */
   max-width: 800px;
   margin: auto;
 }
 
 .headWrapper {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
 

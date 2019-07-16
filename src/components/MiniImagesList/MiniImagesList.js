@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MiniImage from './MiniImage';
+import styles from './MiniImagesList.module.css'
 
 class MiniImagesList extends Component {
 
@@ -19,7 +20,7 @@ class MiniImagesList extends Component {
       )
     });
     return (
-      <div>
+      <div className={styles.wrapper}>
         {arrayMiniImages}
       </div>
     )

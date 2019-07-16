@@ -1,7 +1,15 @@
 @value colors: "../../globalCSS/colors.css";
 @value _darkcolor from colors;
 
-.miniImage {
+.imageWrapper{
+  display: flex; 
+  justify-content: center;
+  overflow: hidden;
   border: 1px solid _darkcolor;
+  width: 58px;
   margin: 1px;
+}
+
+.miniImage {
+  height: 58px;
 }

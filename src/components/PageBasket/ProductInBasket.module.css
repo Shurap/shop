@@ -4,7 +4,6 @@
 .mainWrapper {
   display: flex;
   flex-direction: row;
-  /* border: 1px solid red; */
 }
 
 .image {
@@ -15,7 +14,6 @@
 }
 
 .wrapperText {
-  /* border: 1px solid blue; */
   padding: 5px;
   width: 300px;
 }
@@ -23,13 +21,11 @@
 .wrapperPrice {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid blue; */
   padding: 5px;
   width: 100px;
 }
 
 .wrapperSelect {
-  /* border: 1px solid blue; */
   padding: 5px;
   width: 100px;
 }
@@ -45,7 +41,6 @@
 .wrapperSumm {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid blue; */
   padding: 5px;
   width: 100px;
 }

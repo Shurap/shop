@@ -36,8 +36,9 @@ class Carousel extends Component {
     const ImageSlide = ({ url }) => {
       const style = {
         backgroundImage: `url(${url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundSize: 'cover'/*'contain'*/,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       };
 
       return (

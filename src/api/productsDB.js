@@ -80,7 +80,7 @@ export default [
   {
     id: "7",
     company: 'nike',
-    name: "Nike SB Zoom Stefan Janoski Mid RM",
+    name: "Nike SB Zoom Mid RM",
     collection: "Skate Shoe",
     description: "The Nike SB Zoom Stefan Janoski Mid RM pairs a minimal look with a modern fit. It has been updated with a new, plush sockliner and a flexible midsole for better boardfeel right out of the box.",
     price: "95",
@@ -93,7 +93,7 @@ export default [
   {
     id: "8",
     company: 'nike',
-    name: "Nike SB Zoom Stefan Janoski RM Crafted",
+    name: "Nike SB Zoom RM Crafted",
     collection: "Skate Shoe",
     description: "The Nike SB Zoom Stefan Janoski RM Crafted celebrates Stefan's contributions to the worlds of skate and art. Handwoven leather gives you a unique look while refined cushioning and flexible rubber optimize your performance.",
     price: "100",

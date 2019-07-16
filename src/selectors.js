@@ -1,5 +1,4 @@
 import { uniq } from 'ramda';
-import { createSelector } from 'reselect';
 
 export const getProducts = (state) => {
 
@@ -36,43 +35,6 @@ export const getTotalpriceInBasket = (state) => {
 export const getNewId = (state) => {
   return String(Object.values(state.allProducts).length + 1);
 }
-
-// export const getToBasketProductsWithCount = (state) => {
-//   const uniqIds = uniq(state.productsInBasket);
-//   const productCount = (id) => {
-//     return state.productsInBasket.filter(element => element === id).length
-//   }
-//   const listProductsInBasket = uniqIds.map(element => {
-//     return state.allProducts[element]
-//   })
-//   listProductsInBasket.map(element => {
-//     element['count'] = productCount(element.id)
-//   })
-//   return listProductsInBasket;
-// }
-
-// export const getToBasketProductsWithCount = createSelector(
-//   state => state.productsInBasket,
-//   state => state.allProducts,
-//   (productsInBasket, allProducts) => {
-//     const uniqIds = uniq(productsInBasket);
-//     const productCount = (id) => {
-//       return productsInBasket.filter(element => element === id).length
-//     }
-//     const listProductsInBasket = uniqIds.map(element => {
-//       return allProducts[element]
-//     })
-//     listProductsInBasket.map(element => {
-//       element['count'] = productCount(element.id)
-//     })
-//     return listProductsInBasket;
-//   }
-// )
-
-// const getToBasketProductsWithCountById = (id) => createSelector(
-//   getToBasketProductsWithCount,
-//   (listProductsInBasket) => listProductsInBasket.filtes(el => el === id)
-// )
 
 export const getAllBrands = (state) => {
   return uniq(Object.keys(state.allProducts).map(element => state.allProducts[element]['company']));

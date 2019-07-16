@@ -10,7 +10,6 @@ class Basket extends Component {
   render() {
     return (
       <div>
-        {/* <h4>Basket {this.props.countProductsInBasket} {this.props.totalPriceInBasket}</h4> */}
         <p className={styles.text}>{this.props.countProductsInBasket}</p>
       </div>
     );

@@ -51,21 +51,18 @@ class Product extends Component {
         className={styles.main}
         onClick={() => this.onClickDiv(this.props.product)}
       >
-        {/* <Link
-          to={`/product/${this.props.product.id}`}
-        > */}
         <div
           className={(this.state.onMouseOver) ? styles.mainWrapperBig : styles.mainWrapperSmall}
           onMouseOver={this.onMouseOverComponent}
           onMouseLeave={this.onMouseLeaveComponent}
         >
-          <img
-            className='img-thumbnail'
-            src={this.state.mainImage}
-            // width="300"
-            // height="200"
-            alt={this.props.product.name}
-          ></img>
+          <div className={styles.imageWrapper}>
+            <img
+              className={styles.image}
+              src={this.state.mainImage}
+              alt={this.props.product.name}
+            ></img>
+          </div>
           <div className={styles.wrapperText}>
             <p>{this.props.product.company}</p>
             <p>{this.props.product.name}</p>
@@ -81,7 +78,6 @@ class Product extends Component {
             />
           </div>
         </div>
-        {/* </Link> */}
       </div>
     );
   }

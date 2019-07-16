@@ -45,3 +45,10 @@
   border-radius: 2px;
   background-color: _backgroundcolor;
 }
+
+.textWrapper {
+  border: 1px solid _darkcolor;
+  padding: 5px;
+  margin: 20px 10px 40px 10px;
+  border-radius: 4px;
+}

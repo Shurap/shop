@@ -33,16 +33,26 @@ class PageAdmin extends Component {
       collection: this.state.collection,
       description: this.state.description,
       price: this.state.price,
-      image1: this.state.image1,
-      image2: this.state.image1,
-      image3: this.state.image1,
-      image4: this.state.image1,
-      image5: this.state.image1,
+      image1: "upload/1-1.webp",
+      image2: "upload/1-2.webp",
+      image3: "upload/1-3.webp",
+      image4: "upload/1-4.webp",
+      image5: "upload/1-5.webp"
     }
 
-    console.log(data)
-
     this.props.addDataFromAdmin(data);
+    this.setState({
+      company: '',
+      name: '',
+      collection: '',
+      description: '',
+      price: '',
+      image1: '',
+      image2: '',
+      image3: '',
+      image4: '',
+      image5: '',
+    });
   }
 
   render() {
@@ -60,6 +70,9 @@ class PageAdmin extends Component {
       <div>
         <div className={styles.form} onSubmit={this.onSubmit}>
           <div className={styles.wrapperInputs}>
+            <div className={styles.textWrapper}>
+              Add new product
+            </div>
             <input
               className={styles.textInput}
               name="company"
@@ -110,16 +123,9 @@ class PageAdmin extends Component {
               autoComplete="off"
             />
             <span className={styles.underEdit}></span>
-            <input
-              className={styles.textInput}
-              name="image1"
-              value={image1}
-              onChange={this.onChange}
-              type="text"
-              placeholder="Image's url"
-              autoComplete="off"
-            />
-            <span className={styles.underEdit}></span>
+            <div className={styles.textWrapper}>
+              Pictures add atomatically, because there is no server...
+            </div>
             <button
               className={styles.button}
               onClick={this.onSend}

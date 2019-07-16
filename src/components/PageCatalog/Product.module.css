@@ -1,6 +1,5 @@
 @value colors: "../../globalCSS/colors.css";
-@value _darkcolor, _whitecolor from colors;
-
+@value _darkcolor, _whitecolor, _backgroundcolor from colors;
 
 .main {
   width: 300px;
@@ -17,6 +16,7 @@
   transform: scale(1.1);
   transition: all .3s ease;
   background: _whitecolor;
+  padding: 1px;
 }
 
 .wrapperImgVisible {
@@ -38,3 +38,17 @@ a {
 a:hover {
   color: inherit;
 }
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+
+.image {
+  border: 1px solid _backgroundcolor;
+  border-radius: 4px;
+  padding: 5px;
+  height: 290px;
+}
+
