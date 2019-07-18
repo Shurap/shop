@@ -1,4 +1,10 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor, _darkcolor from colors;
+
 .mainWrapper {
+  display: flex;
+  flex-direction: column;
+
   max-width: 800px;
   margin: auto;
 }
@@ -7,4 +13,13 @@
   display: flex;
   justify-content: space-between;
 
+}
+
+.button {
+  padding: 10px;
+  border: 2px solid _darkcolor;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: _backgroundcolor;
 }

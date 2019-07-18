@@ -51,6 +51,7 @@ class Carousel extends Component {
         <img
           className={styles.left}
           src="upload/carousel/left.png"
+          alt=""
           onClick={this.previousSlide}
         >
         </img>
@@ -58,6 +59,7 @@ class Carousel extends Component {
         <img
           className={styles.right}
           src="upload/carousel/right.png"
+          alt=""
           onClick={this.nextSlide}
         >
         </img>

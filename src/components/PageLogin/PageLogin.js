@@ -14,7 +14,6 @@ class PageLogin extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    const { login, password } = this.state;
     // send login and password, if OK
     this.props.history.push('/admin');
   }
@@ -53,7 +52,7 @@ class PageLogin extends Component {
             />
             <span className={styles.underEdit}></span>
             <div className={styles.textWrapper}>
-              Enter any login and any password, because there is no server...
+              Enter any login and any password, because there isn't server...
             </div>
             <button
               className={styles.button}

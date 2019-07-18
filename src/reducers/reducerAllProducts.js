@@ -2,7 +2,7 @@ import {
   ADD_ALL_PRODUCTS,
   ADD_DATA_FROM_ADMIN
 } from '../constants';
-import { merge, indexBy, prop, append } from 'ramda';
+import { merge } from 'ramda';
 
 const defaultState = {};
 

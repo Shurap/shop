@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import styles from './Product.module.css';
 import { take } from 'ramda';
 import { withRouter } from 'react-router-dom';
-import { fetchProductById } from '../../api';
 import { bindActionCreators } from 'redux';
 import { addOneProduct } from '../../actions';
-
 import MiniImagesList from '../MiniImagesList';
 
 class Product extends Component {
@@ -39,9 +37,7 @@ class Product extends Component {
   onClickMiniImage = (newImage) => { }
 
   onClickDiv = async (product) => {
-    const data = await fetchProductById(this.props.match.params.id);
     this.props.addOneProduct(product);
-
     this.props.history.push(`/product/${product.id}`);
   }
 

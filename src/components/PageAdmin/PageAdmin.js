@@ -33,11 +33,11 @@ class PageAdmin extends Component {
       collection: this.state.collection,
       description: this.state.description,
       price: this.state.price,
-      image1: "upload/1-1.webp",
-      image2: "upload/1-2.webp",
-      image3: "upload/1-3.webp",
-      image4: "upload/1-4.webp",
-      image5: "upload/1-5.webp"
+      image1: "upload/9-1.webp",
+      image2: "upload/9-2.webp",
+      image3: "upload/9-3.webp",
+      image4: "upload/9-4.webp",
+      image5: "upload/9-5.webp"
     }
 
     this.props.addDataFromAdmin(data);
@@ -62,8 +62,7 @@ class PageAdmin extends Component {
       name,
       collection,
       description,
-      price,
-      image1
+      price
     } = this.state;
 
     return (
@@ -118,7 +117,7 @@ class PageAdmin extends Component {
               name="price"
               value={price}
               onChange={this.onChange}
-              type="text"
+              type="number"
               placeholder="Price"
               autoComplete="off"
             />

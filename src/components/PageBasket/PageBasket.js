@@ -9,6 +9,14 @@ import styles from './PageBasket.module.css';
 
 class PageBasket extends Component {
 
+  onBuyAll = () => {
+    const dataToServer = this.props.purchasedProducts.map(element => {
+      return {id: element.id, count: element.count}
+    });
+    const sendToServer = JSON.stringify(dataToServer);
+    console.log(sendToServer);
+  }
+
   render() {
     return (
       <div className={styles.mainWrapper}>
@@ -22,6 +30,12 @@ class PageBasket extends Component {
           </div>
         </div>
         <ListProductsInBasket />
+        <button 
+          className={styles.button}
+          onClick={this.onBuyAll}
+        >
+          buy now
+        </button>
       </div>
     );
   }
@@ -30,7 +44,8 @@ class PageBasket extends Component {
 const mapStateToProps = (state) => {
   return {
     totalPrice: getTotalpriceInBasket(state),
-    countProducts: getCountProductsInBasket(state)
+    countProducts: getCountProductsInBasket(state),
+    purchasedProducts: state.productsInBasket
   }
 }
 
