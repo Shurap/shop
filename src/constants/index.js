@@ -6,3 +6,4 @@ export const ADD_BRAND_LABEL = 'add_brand_label';
 export const CHANGE_PRODUCT_COUNT_IN_BASKET = 'change_product_count_in_basket';
 export const DELETE_PRODUCT_FROM_BASKET = 'delete_product_from_basket';
 export const ADD_DATA_FROM_ADMIN = 'add_data_from_admin';
+export const ADD_SORT_LABEL = 'add_sort_label';

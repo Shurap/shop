@@ -6,7 +6,8 @@ import {
   ADD_BRAND_LABEL,
   CHANGE_PRODUCT_COUNT_IN_BASKET,
   DELETE_PRODUCT_FROM_BASKET,
-  ADD_DATA_FROM_ADMIN
+  ADD_DATA_FROM_ADMIN,
+  ADD_SORT_LABEL
 } from '../constants';
 
 export function addAllProducts (data) {
@@ -62,6 +63,13 @@ export function deleteProductFromBasket (data) {
 export function addDataFromAdmin (data) {
   return {
     type: ADD_DATA_FROM_ADMIN,
+    data
+  }
+}
+
+export function addSortLabel (data) {
+  return {
+    type: ADD_SORT_LABEL,
     data
   }
 }

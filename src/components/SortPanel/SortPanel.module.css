@@ -1,0 +1,17 @@
+@value colors: "../../globalCSS/colors.css";
+@value _backgroundcolor, _darkcolor from colors;
+
+.mainWrapper {
+  border: 1px solid _darkcolor;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 200px;
+  background-color: _backgroundcolor;
+}
+
+.select {
+  border: 1px solid _darkcolor;
+  border-radius: 4px;
+  padding: 5px;
+  background: #f8f8f8;
+}
