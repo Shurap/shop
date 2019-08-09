@@ -1,7 +1,8 @@
 import {
   ADD_PRODUCT_TO_BASKET,
   CHANGE_PRODUCT_COUNT_IN_BASKET,
-  DELETE_PRODUCT_FROM_BASKET
+  DELETE_PRODUCT_FROM_BASKET,
+  CLEAR_BASKET
 } from '../constants';
 import { findIndex, append, propEq, update, clone, remove } from 'ramda';
 
@@ -32,6 +33,9 @@ function productsInBasket(state = defaultState, action) {
     case DELETE_PRODUCT_FROM_BASKET:
       const deleteIndex = findIndex(propEq('id', action.data))(state);
       return remove(deleteIndex, 1, state);
+
+    case CLEAR_BASKET:
+      return [];  
 
     default:
       return state;

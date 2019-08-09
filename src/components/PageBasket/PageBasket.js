@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { clearBasket } from '../../actions';
 import {
   getTotalpriceInBasket,
   getCountProductsInBasket,
@@ -15,6 +17,7 @@ class PageBasket extends Component {
     });
     const sendToServer = JSON.stringify(dataToServer);
     console.log(sendToServer);
+    this.props.clearBasket();
   }
 
   render() {
@@ -49,4 +52,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(PageBasket);
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  clearBasket
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(PageBasket);
